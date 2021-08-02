@@ -1,18 +1,18 @@
-# mav_teleop_twist_keyboard
-Generic keyboard teleop for mavs (micro-aerial-vehicles) based on the teleop twist keyboard package. Completely based on the teleop-twist-keyboard package. The message type has been changed to TwistStamped type and the topic it is publishing to is: '/mavros/setpoint_velocity/cmd_vel'. Since MAVs require a stream of messages with a given frequency, the default publishing rate is set to 10Hz.
+# Keyboard teleop package for mavs (micro-aerial-vehicles)
+This package is a modification of the teleop-twist-keyboard package. The message type has been changed from Twist to TwistStamped and it is publishing to the: '/mavros/setpoint_velocity/cmd_vel' topic. Since MAVs require a stream of messages with a given frequency, the default publishing rate is set to 10Hz.
 
 # Launch
-Run.
+To start the mav_teleop_twist_keyboard package with the default parameters run:
 ```
 rosrun mav_teleop_twist_keyboard mav_teleop_twist_keyboard.py
 ```
 
-With custom values.
+To start with custom values run:
 ```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.9 _turn:=0.8
 ```
 
-Publishing to a different topic (in this case `my_cmd_vel`).
+To publish to a different topic (in this case `my_cmd_vel`) use:
 ```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=my_cmd_vel
 ```
@@ -48,9 +48,9 @@ CTRL-C to quit
 
 # Repeat Rate
 
-MAVs require  constant  updates on the /mavros/setpoint\_velocity/cmd\_vel topic, based on teleop\_twist\_keyboard mav\_teleop\_twist\_keyboard can be configured as well to repeat the last command at a fixed interval, using the `repeat_rate` private parameter. The default repeat rate is 10Hz.
+The teleop\_twist\_keyboard package has the option to be configured to repeat the last command at a fixed interval, using the `repeat_rate` private parameter. Since MAVs require  constant  updates on the /mavros/setpoint\_velocity/cmd\_vel topic, in the  mav\_teleop\_twist\_keyboard package the default has been changed to repeat the last command at 10Hz.
 
-For example, to repeat the last command at 20Hz:
+This value can be adjusted for different rates. For example, to repeat the last command at 20Hz, use:
 
 ```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py _repeat_rate:=20.0
