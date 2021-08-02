@@ -61,7 +61,7 @@ This value can be adjusted for different rates, e.g. 30Hz:
 rosrun mav_teleop_twist_keyboard mav_teleop_twist_keyboard.py _repeat_rate:=30.0
 ```
 
-"It is _highly_ recommended that the repeat rate be used in conjunction with the key timeout, to prevent runaway robots." (source: teleop_twist_keyboard package github readme)
+"It is _highly_ recommended that the repeat rate be used in conjunction with the key timeout, to prevent runaway robots." ([source: teleop-twist-keyboard github page](https://github.com/ros-teleop/teleop_twist_keyboard))
 
 # Key Timeout
 
@@ -72,7 +72,7 @@ For example, to stop your robot if a keypress has not been received in 0.6 secon
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py _key_timeout:=0.6
 ```
 
-It is recommended that you set `key_timeout` higher than the initial key repeat delay on your system (This delay is 0.5 seconds by default on Ubuntu, but can be adjusted)." (source: teleop_twist_keyboard package github readme)
+It is recommended that you set `key_timeout` higher than the initial key repeat delay on your system (This delay is 0.5 seconds by default on Ubuntu, but can be adjusted)." ([source: teleop-twist-keyboard github page](https://github.com/ros-teleop/teleop_twist_keyboard))
 
 
 ### Special thanks to the creators of teleop_twist_keyboard package. This package and Readme is based on the [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard) package, with slight adjustments to suit controlling mavs. The code snippet used to set the mode of the uav to offboard, arm, and land was copied from https://edu.gaitech.hk/gapter/mavros-basics.html Special thanks to the authors of those tutorials as well!
